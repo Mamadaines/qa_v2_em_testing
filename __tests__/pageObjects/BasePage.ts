@@ -15,7 +15,7 @@ interface Options {
   /** if no driver is supplied, we make one */
   driver?: WebDriver;
   /** if no driver is supplied, will check for preferred browser (default chrome) */
-  browser?: "chrome" | "firefox";
+  browser?: "chrome" | "Chrome";
   /** some pages may have a base url */
   url?: string;
 }
@@ -34,11 +34,11 @@ export class BasePage {
     if (
       options &&
       options.browser &&
-      options.browser == "firefox" &&
+      options.browser == "chrome" &&
       options.driver == undefined
     )
       this.driver = new Builder()
-        .withCapabilities(Capabilities.firefox())
+        .withCapabilities(Capabilities.chrome())
         .build();
     else
       this.driver = new Builder()
@@ -117,7 +117,7 @@ export class BasePage {
    */
   async takeScreenshot(filepath: string) {
     fs.writeFile(
-      `${filepath}.png`,
+      `${__dirname}/screenshots.png`,
       await this.driver.takeScreenshot(),
       "base64",
       (e) => {

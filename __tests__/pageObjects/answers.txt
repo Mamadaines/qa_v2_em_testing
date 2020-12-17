@@ -1,0 +1,6 @@
+Are these tests stable/will they give us false positives?
+No, these tests are not stabel and it is possible to get a false positive as you can see from the test that I added to find a particular position. 
+Do these tests miss bugs you could find manually following the same processes?
+With these tests it would actually be better to search for them manually. If you did these tests through automation, you could miss bugs.
+What would you change about the testing if you were given enough time?
+Honestly I would like to learn how to make these tests better, I know they need to be more specific but this is not something that I currently know how to do or understand. 
